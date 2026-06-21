@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DeepTune - 음악 디깅 플랫폼</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🎵 DeepTune
+    </div>
+
+    <nav>
+
+        <button onclick="showPage('home')">홈</button>
+
+        <button onclick="showPage('explore')">탐색</button>
+
+        <button onclick="showPage('playlist')">플레이리스트</button>
+
+        <button onclick="showPage('log')">디깅 로그</button>
+
+        <button onclick="showPage('mypage')">마이페이지</button>
+
+    </nav>
+
+</header>
+
+<main>
+
+<!-- 홈 -->
+
+<section id="home" class="page active">
+
+    <h1>새로운 음악을 발견하세요</h1>
+
+    <p>
+        DeepTune은 사용자의 음악 디깅 활동을 기록하고
+        플레이리스트를 관리할 수 있는 플랫폼입니다.
+    </p>
+
+    <div class="card">
+
+        <h2>음악 검색</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="곡 제목 또는 아티스트 입력">
+
+        <button onclick="searchSongs()">
+            검색
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>추천 음악</h2>
+
+        <div id="recommendedSongs">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 탐색 -->
+
+<section id="explore" class="page">
+
+    <h1>음악 탐색</h1>
+
+    <select id="genreFilter" onchange="filterSongs()">
+
+        <option value="전체">전체</option>
+
+        <option value="하이퍼팝">하이퍼팝</option>
+
+        <option value="인디">인디</option>
+
+        <option value="힙합">힙합</option>
+
+        <option value="전자음악">전자음악</option>
+
+        <option value="록">록</option>
+
+    </select>
+
+    <div id="songContainer">
+
+    </div>
+
+</section>
+
+<!-- 플레이리스트 -->
+
+<section id="playlist" class="page">
+
+    <h1>플레이리스트</h1>
+
+    <div class="card">
+
+        <input
+            type="text"
+            id="playlistName"
+            placeholder="플레이리스트 이름">
+
+        <button onclick="createPlaylist()">
+
+            생성
+
+        </button>
+
+    </div>
+
+    <div id="playlistContainer">
+
+    </div>
+
+</section>
+
+<!-- 디깅 로그 -->
+
+<section id="log" class="page">
+
+    <h1>디깅 로그</h1>
+
+    <p>
+        저장한 음악 기록
+    </p>
+
+    <div id="diggingLog">
+
+    </div>
+
+</section>
+
+<!-- 마이페이지 -->
+
+<section id="mypage" class="page">
+
+    <h1>마이페이지</h1>
+
+    <div class="card">
+
+        <h2>닉네임</h2>
+
+        <input
+            type="text"
+            id="nicknameInput"
+            placeholder="닉네임 입력">
+
+        <button onclick="saveNickname()">
+            저장
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h2>내 정보</h2>
+
+        <p id="nicknameDisplay">
+            닉네임: 없음
+        </p>
+
+        <p id="savedCount">
+            저장한 음악 수: 0
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>통계</h2>
+
+        <p id="topGenre">
+
+        </p>
+
+        <p id="topArtist">
+
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>
+        DeepTune © 2026
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
